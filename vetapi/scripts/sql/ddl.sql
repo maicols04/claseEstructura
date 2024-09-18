@@ -1,16 +1,19 @@
-CREATE TABLE cliente (
+CREATE TABLE client (
     id_cliente INT PRIMARY KEY AUTO_INCREMENT,
-    nombre VARCHAR(100) NOT NULL,
-    apellido VARCHAR(100) NOT NULL,
-    direccion VARCHAR(255),
-    telefono VARCHAR(20)
+    id_type  VARCHAR(10) NOT NULL,
+    id_number  VARCHAR(13) NOT NULL,
+    first_name VARCHAR(100) NOT NULL,
+    last_name VARCHAR(100) NOT NULL,
+    phone_number VARCHAR(20) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    address VARCHAR(255)
 );
 
-CREATE TABLE mascota (
-    id_mascota INT PRIMARY KEY AUTO_INCREMENT,
-    nombre VARCHAR(100) NOT NULL,
-    especie VARCHAR(50),
-    raza VARCHAR(50),
-    id_cliente INT,
-    FOREIGN KEY (id_cliente) REFERENCES cliente(id_cliente)
+CREATE TABLE pet (
+    id_pet INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(100) NOT NULL,
+    kind VARCHAR(50),
+    breed VARCHAR(50),
+    id_client INT,
+    FOREIGN KEY (id_client) REFERENCES client(id_cliente)
 );
