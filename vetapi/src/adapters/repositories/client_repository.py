@@ -1,3 +1,4 @@
+from sqlalchemy.exc import IntegrityError
 from sqlalchemy.orm import Session
 
 from vetapi.src.adapters.db.models import ClientDB
@@ -7,15 +8,24 @@ class ClientRepository:
 
     @staticmethod
     def create_client(db: Session, client: Client):
-        db_client = ClientDB(**client.model_dump())
-        db.add(db_client)
-        db.commit()
-        db.refresh(db_client)
-        return db_client
+        try:
+            db_client = ClientDB(**client.model_dump())
+            db.add(db_client)
+            db.commit()
+            db.refresh(db_client)
+            return db_client
+        except IntegrityError as ie:
+            print(f'Error into create client {ie}')
+            raise ie
+
 
     @staticmethod
     def get_client(db: Session, id_client: int):
         return db.query(ClientDB).filter(ClientDB.id_client == id_client).first()
+
+    @staticmethod
+    def get_all_clients(db: Session, skip: int, limit: int):
+        return db.query(ClientDB).offset(skip).limit(limit).all()
 
     @staticmethod
     def update_client(db: Session, id_client: int, client: Client):

@@ -12,6 +12,10 @@ class ClientService:
         return ClientRepository.get_client(get_db(), id_client)
 
     @staticmethod
+    async def get_all_client(skip: int = 0, limit: int = 10):
+        return ClientRepository.get_all_clients(get_db(), skip, limit)
+
+    @staticmethod
     async def update_client(id_client: int, client_data: Client):
         return ClientRepository.update_client(get_db(), id_client, client_data)
 
