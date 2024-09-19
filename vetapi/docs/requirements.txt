@@ -1,0 +1,17 @@
+# Requirements file for ReadTheDocs, check .readthedocs.yml.
+# To build the module reference correctly, make sure every external package
+# under `install_requires` in `setup.cfg` is also listed here!
+
+## Another way: pip install -r ./vetapi/docs/requirements.txt
+#-> pip install -r requirements.txt
+# sphinx>=3.2.1
+# sphinx_rtd_theme
+# Flask==2.2.3
+# SQLAlchemy>=1.4
+fastapi
+uvicorn
+sqlalchemy
+pydantic
+# mysqlclient
+mysql-connector-python # O el adaptador que necesites para tu base de datos
+email-validator

@@ -1,0 +1,9 @@
+[
+    {
+        "id_cliente": 1,
+        "nombre": "Juan",
+        "apellido": "Pérez",
+        "direccion": "Calle Falsa 123",
+        "telefono": "1234567890"
+    }
+]
