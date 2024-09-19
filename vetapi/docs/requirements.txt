@@ -4,13 +4,14 @@
 
 ## Another way: pip install -r ./vetapi/docs/requirements.txt
 #-> pip install -r requirements.txt
-sphinx>=3.2.1
+# sphinx>=3.2.1
 # sphinx_rtd_theme
-Flask==2.2.3
-SQLAlchemy>=1.4
+# Flask==2.2.3
+# SQLAlchemy>=1.4
 fastapi
 uvicorn
 sqlalchemy
 pydantic
-mysqlclient
+# mysqlclient
 mysql-connector-python # O el adaptador que necesites para tu base de datos
+email-validator

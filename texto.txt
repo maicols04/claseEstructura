@@ -2,3 +2,39 @@ primer cambio
 segundo cambio
 tercer cambio
 cuarto cambio
+
+
+POST http://localhost:8000/clients/
+Body:
+{
+  "id_type": "DNI",
+  "id_number": "123456789",
+  "first_name": "John",
+  "last_name": "Doe",
+  "phone_number": "555-1234",
+  "email": "john.doe@example.com",
+  "address": "123 Main St"
+}
+
+{
+  "id_type": "DNI",
+  "id_number": "123456789",
+  "first_name": "John",
+  "last_name": "Doe",
+  "phone_number": "555-1234",
+  "email": "john.doe@example.com",
+  "address": "123 Main St",
+  "id_client": 1
+}
+
+POST http://localhost:8000/clients/
+Body:
+{
+    "id_type": "DNI",
+    "id_number": "123456789",
+    "first_name": "John",
+    "last_name": "Doe",
+    "phone_number": "555-1234",
+    "email": "john.doe@example.com",
+    "address": "123 Main St"
+}
